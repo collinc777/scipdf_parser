@@ -62,9 +62,7 @@ class SciPDFParser:
             ]
 
         if isinstance(pdf_path, str):
-            if op.splitext(pdf_path)[-1].lower() != ".pdf":
-                raise ValueError("The input has to end with ``.pdf``")
-            elif validate_url(pdf_path):
+            if validate_url(pdf_path):
                 page = urllib.request.urlopen(pdf_path).read()
                 parsed_article = requests.post(url, files={"input": page}).text
             elif op.exists(pdf_path):
