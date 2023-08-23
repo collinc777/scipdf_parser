@@ -33,7 +33,7 @@ class TextStats(BaseModel):
     n_verb: Optional[int]
     n_digits: int
     percent_digits: float
-    n_word_per_sents: list
+    n_word_per_sents: list[int]
     avg_word_per_sents: float
 
 
@@ -82,7 +82,7 @@ class Figure(BaseModel):
 class Formula(BaseModel):
     formula_id: str
     formula_text: str
-    formula_coordinates: list
+    formula_coordinates: list[float]
 
 
 class Article(BaseModel):
